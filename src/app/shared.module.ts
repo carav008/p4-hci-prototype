@@ -17,6 +17,7 @@ import {
   MatSidenavModule,
   MatSnackBarModule,
   MatToolbarModule,
+  MatGridListModule,
 } from '@angular/material';
 
 const MATERIAL_MODULES: any[] = [
@@ -35,6 +36,7 @@ const MATERIAL_MODULES: any[] = [
   MatExpansionModule,
   MatSlideToggleModule,
   MatChipsModule,
+  MatGridListModule
 ];
 
 
