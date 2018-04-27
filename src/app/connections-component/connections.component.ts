@@ -36,7 +36,7 @@ export class ConnectionsComponent{
   connections: Connection[];
 
   constructor(){
-    this.connections = [this.jeff,this.dave,this.andy]
+    this.connections = [this.jeff,this.dave,this.andy, this.brian]
   }
 
 }

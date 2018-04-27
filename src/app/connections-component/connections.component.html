@@ -13,7 +13,7 @@
 <mat-card *ngFor="let connection of connections">
   <mat-card-title><mat-icon>face</mat-icon> {{connection.name}}</mat-card-title>
   <mat-card-content>
-    <p>{{connection.distance}} away from you</p>
+    <p>{{connection.distance}} away from you <mat-icon class="add-connection">add_circle</mat-icon></p>
     <p>Bio: {{connection.bio}}</p>
   </mat-card-content>
 </mat-card>
