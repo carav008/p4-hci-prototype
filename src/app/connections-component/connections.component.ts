@@ -12,23 +12,31 @@ export class ConnectionsComponent{
   jeff: Connection = {
     distance: 1,
     name: 'Jeff',
-    interests: ['Hockey', 'Skiing']
+    interests: ['Hockey', 'Skiing'],
+    bio: 'Sports are cool!'
   };
   dave: Connection = {
     distance: 2.3,
     name: 'Dave',
-    interests: ['Fishing', 'Baseball']
+    interests: ['Fishing', 'Baseball'],
+    bio: "Let's go fishing!"
   };
   andy: Connection = {
     distance: 0.01,
     name: 'Andy',
-    interests: ['Coding', 'Powerpoints']
+    interests: ['Coding', 'Powerpoints'],
+    bio: "Powerpoints are awesome!"
+  };
+  brian: Connection = {
+    distance: 0.02,
+    name: 'Brian',
+    interests: ['Coding', 'Angular'],
+    bio: "What's up?"
   };
   connections: Connection[];
 
   constructor(){
-    this.jeff.distance = 2.1;
-    this.connections = []
+    this.connections = [this.jeff,this.dave,this.andy]
   }
 
 }
