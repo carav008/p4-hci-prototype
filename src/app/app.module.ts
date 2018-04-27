@@ -9,15 +9,19 @@ import {SharedModule} from "./shared.module";
 import {Routing} from "./app.routes";
 import {MATERIAL_COMPATIBILITY_MODE} from "@angular/material";
 import {APP_BASE_HREF} from "@angular/common";
+import {MessageFriendComponent} from "./friends-component/message-friend.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnectionsComponent,
-    FriendsComponent
+    FriendsComponent,
+    MessageFriendComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
 		HttpModule,
     SharedModule,
@@ -26,6 +30,10 @@ import {APP_BASE_HREF} from "@angular/common";
   ],
   providers: [
     {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true}, {provide: APP_BASE_HREF, useValue: '/'}],
+
+  entryComponents:[
+    MessageFriendComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
