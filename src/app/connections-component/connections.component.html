@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Find Connections</mat-card-title>
+    <mat-form-field>
+    <input matInput placeholder="Search by interest">
+    </mat-form-field>
+  <button mat-button>
+    <mat-icon>search</mat-icon>
+  </button>
+  <mat-card-content>
+    <h2>Connections near you!</h2>
+  </mat-card-content>
+</mat-card>
+<mat-card *ngFor="let connection of connections" class="connection-card">
+  <mat-card-title><mat-icon>face</mat-icon> {{connection.name}}</mat-card-title>
+  <mat-card-content>
+    <p>{{connection.distance}} away from you <mat-icon class="add-connection">add_circle</mat-icon></p>
+    <mat-card-subtitle>Bio: {{connection.bio}}</mat-card-subtitle>
+  </mat-card-content>
+</mat-card>
