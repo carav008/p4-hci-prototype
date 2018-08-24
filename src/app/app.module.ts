@@ -9,20 +9,26 @@ import {SharedModule} from "./shared.module";
 import {Routing} from "./app.routes";
 
 import {APP_BASE_HREF} from "@angular/common";
+import {MessageFriendComponent} from './friends-component/message-friend.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnectionsComponent,
-    FriendsComponent
+    FriendsComponent,
+    MessageFriendComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
 		HttpModule,
     SharedModule,
     Routing
-
+  ],
+  entryComponents:[
+    MessageFriendComponent,
   ],
   providers: [
   {provide: APP_BASE_HREF, useValue: '/'}],

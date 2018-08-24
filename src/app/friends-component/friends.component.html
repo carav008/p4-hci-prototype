@@ -6,8 +6,24 @@
   </mat-card-header>
   <mat-card-content>
     <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>This is some interest</mat-grid-tile>
-      <mat-grid-tile>This is some hobbies</mat-grid-tile>
+      <mat-grid-tile>
+        <mat-list>
+          <p>John Doe's Interest</p>
+          <mat-list-item *ngFor="let inter of interest">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <h4 mat-line>{{inter.name}}</h4>
+          </mat-list-item>
+        </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-list>
+          <p>John Doe's hobbies</p>
+          <mat-list-item *ngFor="let hobby of hobbies">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <h4 mat-line>{{hobby.name}}</h4>
+          </mat-list-item>
+        </mat-list>
+      </mat-grid-tile>
 
     </mat-grid-list>
   </mat-card-content>
@@ -18,7 +34,9 @@
 
   <mat-card-content>
     <div class="button-row">
-      <button mat-raised-button color="primary">Message this friend</button>
+
+      <button mat-raised-button (click)="openDialog()" color="primary">Message this friend</button>
+
     </div>
 
   </mat-card-content>
