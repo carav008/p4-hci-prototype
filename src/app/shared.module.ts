@@ -20,34 +20,45 @@ import {
   MatGridListModule,
 } from '@angular/material';
 
-const MATERIAL_MODULES: any[] = [
-  MatListModule,
-  MatButtonModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatCardModule,
-  MatMenuModule,
-  MatSidenavModule,
-  MatInputModule,
-  MatTooltipModule,
-  MatFormFieldModule,
-  MatDialogModule,
-  MatSnackBarModule,
-  MatExpansionModule,
-  MatSlideToggleModule,
-  MatChipsModule,
-  MatGridListModule
-];
+// export const MATERIAL_MODULES: any[] = [
+//   MatListModule,
+//   MatButtonModule,
+//   MatIconModule,
+//   MatToolbarModule,
+//   MatCardModule,
+//   MatMenuModule,
+//   MatSidenavModule,
+//   MatInputModule,
+//   MatTooltipModule,
+//   MatFormFieldModule,
+//   MatDialogModule,
+//   MatSnackBarModule,
+//   MatExpansionModule,
+//   MatSlideToggleModule,
+//   MatChipsModule,
+//   MatGridListModule
+// ];
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MATERIAL_MODULES
-  ],
   declarations: [],
   exports: [
-    MATERIAL_MODULES
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatInputModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatChipsModule,
+    MatGridListModule
   ]
 })
 
