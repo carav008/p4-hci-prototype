@@ -15,3 +15,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}

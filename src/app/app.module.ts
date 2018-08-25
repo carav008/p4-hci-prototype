@@ -11,13 +11,19 @@ import {Routing} from "./app.routes";
 import {APP_BASE_HREF} from "@angular/common";
 import {MessageFriendComponent} from './friends-component/message-friend.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnectionsComponent,
     FriendsComponent,
-    MessageFriendComponent
+    MessageFriendComponent,
+    HomeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
 		HttpModule,
     SharedModule,
-    Routing
+    Routing,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   entryComponents:[
     MessageFriendComponent,

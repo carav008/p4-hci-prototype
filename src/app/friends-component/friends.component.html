@@ -1,44 +1,43 @@
 
+<div class="grid-container">
 <mat-card >
   <mat-card-header class="main-div">
     <mat-card-title>John Doe</mat-card-title>
     <mat-card-subtitle>Just a guy looking for friends</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="dashboard-card-content">
     <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile>
+      <mat-grid-tile *ngFor="let inter of interest">
         <mat-list>
           <p>John Doe's Interest</p>
-          <mat-list-item *ngFor="let inter of interest">
+          <mat-list-item >
             <mat-icon mat-list-icon>note</mat-icon>
             <h4 mat-line>{{inter.name}}</h4>
           </mat-list-item>
         </mat-list>
       </mat-grid-tile>
-      <mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+
+    <mat-card-content class="dashboard-card-content">
+      <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let hobby of hobbies">
         <mat-list>
           <p>John Doe's hobbies</p>
-          <mat-list-item *ngFor="let hobby of hobbies">
+          <mat-list-item >
             <mat-icon mat-list-icon>note</mat-icon>
             <h4 mat-line>{{hobby.name}}</h4>
           </mat-list-item>
         </mat-list>
       </mat-grid-tile>
-
     </mat-grid-list>
   </mat-card-content>
-
 </mat-card>
-
+</div>
 <mat-card>
-
   <mat-card-content>
     <div class="button-row">
-
       <button mat-raised-button (click)="openDialog()" color="primary">Message this friend</button>
-
     </div>
-
   </mat-card-content>
-
 </mat-card>
