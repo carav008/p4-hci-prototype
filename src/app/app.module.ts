@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { SharedService } from './connections-component/shared.service';
 
 @NgModule({
   declarations: [
@@ -44,10 +45,11 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
   ],
   entryComponents:[
     MessageFriendComponent,
+    ProfileComponent
   ],
   providers: [
+    SharedService,
   {provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

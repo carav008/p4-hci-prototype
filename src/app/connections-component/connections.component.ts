@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Connection } from "./connection";
+import {MatDialog} from '@angular/material';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'connections',
@@ -7,36 +9,16 @@ import { Connection } from "./connection";
   styleUrls: ['./connections.component.scss']
 })
 
-export class ConnectionsComponent{
+export class ConnectionsComponent implements OnInit{
 
-  jeff: Connection = {
-    distance: 1,
-    name: 'Jeff',
-    interests: ['Hockey', 'Skiing'],
-    bio: 'Sports are cool!'
-  };
-  dave: Connection = {
-    distance: 2.3,
-    name: 'Dave',
-    interests: ['Fishing', 'Baseball'],
-    bio: "Let's go fishing!"
-  };
-  andy: Connection = {
-    distance: 0.01,
-    name: 'Andy',
-    interests: ['Coding', 'Powerpoints'],
-    bio: "Powerpoints are awesome!"
-  };
-  brian: Connection = {
-    distance: 0.02,
-    name: 'Brian',
-    interests: ['Coding', 'Angular'],
-    bio: "What's up?"
-  };
-  connections: Connection[];
+  connections: Connection[]
+  constructor(public dialog: MatDialog, private service: SharedService){
+    this.connections = this.service.connect
+  }
+  ngOnInit(){
 
-  constructor(){
-    this.connections = [this.jeff,this.dave,this.andy, this.brian]
   }
 
+ 
+  bool = true
 }

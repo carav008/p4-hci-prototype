@@ -7,10 +7,9 @@ import { ProfileComponent } from "./profile/profile.component";
 
 
 export const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: ProfileComponent},
   {path: 'connections', component: ConnectionsComponent},
   {path: 'friends', component: FriendsComponent},
-  {path: 'profile', component: ProfileComponent}
   
 ];
 
