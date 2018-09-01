@@ -16,6 +16,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { SharedService } from './connections-component/shared.service';
+import { HttpClientModule } from "@angular/common/http";
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SharedService } from './connections-component/shared.service';
     MessageFriendComponent,
     HomeComponent,
     ProfileComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { SharedService } from './connections-component/shared.service';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule, 
+    HttpClientModule
   ],
   entryComponents:[
     MessageFriendComponent,

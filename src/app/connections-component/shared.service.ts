@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Connection } from "./connection"
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class SharedService{
@@ -30,19 +32,32 @@ export class SharedService{
       };
 
       connect: Connection[]
-    
+      hideme:any = {} 
 
-      constructor(){
-        this.connect = [this.jeff,this.dave,this.andy, this.brian]
+
+      constructor(private http: HttpClient){
+        this.getJSON().subscribe(data =>{
+            console.log(data)
+          }
+        )
+        //this.connect = [this.jeff,this.dave,this.andy, this.brian]
       }
 
       bool = true
       addFriend(friend: string):boolean{
         console.log(friend + " was added! ")
         this.bool = !this.bool
-
         return this.bool
       } 
+
+      getJSON(): Observable<any>{
+        return this.http.get("./assets/mydata.json")
+      }
+
+      var = true
+      toggleHidden(){
+        this.var = !this.var
+      }
 
         
     

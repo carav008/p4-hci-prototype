@@ -1,22 +1,51 @@
+<mat-card>
+        <mat-card-title>Find Connections</mat-card-title>
+          <mat-form-field>
+          <input [(ngModel)]="searchText" matInput placeholder="Search by interest">
+          </mat-form-field>
+        <button mat-button>
+          <mat-icon>search</mat-icon>
+        </button>
+        <mat-card-content>
+          <h2>Connections near you!</h2>
+        </mat-card-content>
+      </mat-card>
+<mat-card>
+  
 <mat-accordion class="example-headers-align">
-    <mat-expansion-panel *ngFor="let connection of connections" class="connection-card" hideToggle [expanded]="false">
+    <mat-expansion-panel *ngFor="let connection of connections | filter : searchText" class="connection-card"  hideToggle [expanded]="false">
       <mat-expansion-panel-header>
         <mat-panel-title >
-            <mat-card-title><mat-icon>face</mat-icon> {{connection.name}} </mat-card-title>
+            <mat-card-title id="conName"><mat-icon *ngIf="!mobile">face</mat-icon> {{connection.name}} </mat-card-title>
+            
         </mat-panel-title>
         <mat-panel-description>
             {{connection.distance}} miles away from you  
         </mat-panel-description>
-        <mat-icon *ngIf="this.service.bool" (click)="this.service.addFriend(connection.name)" type="button" class="add-connection">add_circle</mat-icon>
-        
-
-        <mat-icon *ngIf="!this.service.bool" (click)="this.service.addFriend(connection.name)" type="button" class="add-connection">check_circle</mat-icon>
-          <!-- <ng-template #elseBlock><mat-icon (click)="this.service.addFriend(connection.name)" type="button" class="add-connection">check_circle</mat-icon></ng-template> -->
-         
       </mat-expansion-panel-header>
       <mat-card-content>
           
-          <mat-card-subtitle>Bio: {{connection.bio}}</mat-card-subtitle>
+          <mat-card-subtitle class="sub">Bio: {{connection.bio}}</mat-card-subtitle>
+          <!-- <button (click)="hideme[connection.name] = !hideme[connection.name]"  [hidden]="hideme[connection.name]" >
+              <mat-icon class="add-connection">add_circle</mat-icon>
+            </button>
+    
+            <button (click)="hideme[connection.name] = !hideme[connection.name]" [hidden]="!hideme[connection.name]">
+              <mat-icon class="add-connection">check_circle</mat-icon>
+            </button> -->
         </mat-card-content>
+
+        <button mat-raised-button (click)="this.service.toggleHidden()" >View Full Profile</button>
+        <button (click)="this.service.hideme[connection.name] = !this.service.hideme[connection.name]"[hidden]="this.service.hideme[connection.name]" >
+            <mat-icon class="add-connection">add_circle</mat-icon>
+          </button>
+  
+          <button (click)="this.service.hideme[connection.name] = !this.service.hideme[connection.name]" [hidden]="!this.service.hideme[connection.name]">
+            <mat-icon class="add-connection">check_circle</mat-icon>
+          </button>
+      
+
+        <app-profile [connectionName]="connection.name" [hidden]="this.service.var" (click)="!this.service.var"></app-profile>
     </mat-expansion-panel>
   </mat-accordion>
+</mat-card>
