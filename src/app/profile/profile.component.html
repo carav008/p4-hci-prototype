@@ -1,5 +1,17 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Your Profile</h1>
+  <h1 class="mat-h1" >
+    <div>
+    {{ connectionName }}'s Profile
+     <!-- <button mat-raised-button (click)="this.service.hideme[connectionName] = !this.service.hideme[connectionName]"  [hidden]="this.service.hideme[connectionName]" >
+        <mat-icon class="add-connection">add_circle</mat-icon>
+      </button>
+
+      <button (click)="this.service.hideme[connectionName] = !this.service.hideme[connectionName]" [hidden]="!this.service.hideme[connectionName]">
+        <mat-icon class="add-connection">check_circle</mat-icon>
+      </button> -->
+    </div>
+  </h1>
+
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">  
       <mat-card class="dashboard-card">

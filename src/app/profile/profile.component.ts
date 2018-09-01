@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { SharedService } from '../connections-component/shared.service';
 import { Connection } from '../connections-component/connection';
 
@@ -12,13 +12,16 @@ import { Connection } from '../connections-component/connection';
 export class ProfileComponent implements OnInit{
 
 
+  @Input() connectionName: string
+  @Input() connectionBio: string
   connections: Connection[]
-
   constructor(private service: SharedService) { 
-    this.connections = this.service.connect
+    
   }
 
   ngOnInit(){
+    
+    
   }
   
   cards = [
